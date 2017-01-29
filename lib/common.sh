@@ -64,3 +64,12 @@ export_mix_env() {
 
   info "* MIX_ENV=${MIX_ENV}"
 }
+
+export_node_env() {
+  if [ -z "${NODE_ENV}" ]; then
+    export NODE_ENV=dev
+    export NPM_CONFIG_PRODUCTION=false
+  fi
+
+  info "* NODE_ENV=${NODE_ENV}"
+}
